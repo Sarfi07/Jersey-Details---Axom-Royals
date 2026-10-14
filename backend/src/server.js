@@ -4,13 +4,24 @@ import cors from "cors";
 import { PrismaClient, Prisma } from "@prisma/client";
 import entriesRouter from "./routes/entries.js";
 
+
+const allowedOrigins = [
+  `${process.env.CLIENT_ORIGIN}`,
+  `${process.CLIENT_ORIGIN_LOCAL}`,
+];
+
+
 const app = express();
 const prisma = new PrismaClient();
 const port = Number(process.env.PORT) || 4000;
 
-app.use(cors({
-  origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
-}));
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 app.get("/api/health", (_req, res) => {

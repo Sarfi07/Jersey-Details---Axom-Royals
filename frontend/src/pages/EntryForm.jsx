@@ -166,12 +166,12 @@ export default function EntryForm() {
           <div className="field-grid">
             <label className="field">
               <span>Waist <span className="required">*</span></span>
-              <input name="pantWaist" value={form.pantWaist} onChange={update} placeholder="e.g. 32 inches" maxLength={40} required />
+              <input name="pantWaist" value={form.pantWaist} onChange={update} placeholder="e.g. 32 " maxLength={40} required />
               <small>Include the unit if needed.</small>
             </label>
             <label className="field">
               <span>Length <span className="required">*</span></span>
-              <input name="pantLength" value={form.pantLength} onChange={update} placeholder="e.g. 40 inches" maxLength={40} required />
+              <input name="pantLength" value={form.pantLength} onChange={update} placeholder="e.g. 40 " maxLength={40} required />
               <small>Include the unit if needed.</small>
             </label>
           </div>
